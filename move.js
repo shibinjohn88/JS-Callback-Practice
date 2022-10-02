@@ -16,21 +16,24 @@ function move(element) {
 
     // change value of x and y based on direction
     function moveCharacter() {
-      if (direction === "west") {
-        x -= 1;
-      }
-      if (direction === "north") {
-        y += 1;
-      }
-      if (direction === "east") {
-        x += 1;
-      }
-      if (direction === "south") {
-        y -= 1;
+      switch (direction) {
+        case "west":
+          x -=1
+          break
+        case "east":
+          x += 1
+          break
+        case "north":
+          y += 1
+          break
+        case "south":
+          y -= 1
+          break
       }
       element.style.left = x + "px";
       element.style.bottom = y + "px";
     }
+        
 
     // call the function passed every 1 ms
     setInterval(moveCharacter, 1);
